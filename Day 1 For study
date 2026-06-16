@@ -1,0 +1,534 @@
+# 🖥️ Day 1 — Hardware Fundamentals & System Information
+
+---
+
+# 🎯 Learning Objective
+
+Day 1 ka goal tha computer ke major hardware components ko identify karna aur Windows ke built-in tools use karke system information collect karna.
+
+---
+
+# 🏗️ Basic PC Components
+
+## CPU (Central Processing Unit)
+
+### Kya Hai?
+
+CPU computer ka **brain** hota hai.
+
+Ye saare calculations perform karta hai aur instructions execute karta hai.
+
+### Real World Analogy 🧠
+
+Socho CPU office ka manager hai.
+
+- Kis employee ko kya kaam karna hai
+- Kaunsi file pehle process hogi
+- Kaunsa task important hai
+
+Sab decisions CPU leta hai.
+
+### Mere System Mein
+
+```text
+Intel Core i7-13650HX
+14 Cores
+20 Logical Processors
+```
+
+---
+
+## RAM (Random Access Memory)
+
+### Kya Hai?
+
+RAM temporary working memory hoti hai.
+
+Jitne applications open honge, utni RAM use hogi.
+
+### Real World Analogy 📚
+
+Socho tumhari study table.
+
+- Badi table = Zyada books ek saath khol sakte ho
+- Chhoti table = Baar-baar books replace karni padengi
+
+RAM bhi waise hi kaam karti hai.
+
+### Mere System Mein
+
+```text
+Installed RAM: 16 GB
+```
+
+---
+
+## SSD (Solid State Drive)
+
+### Kya Hai?
+
+SSD permanent storage device hai.
+
+Isme:
+
+- Windows install hota hai
+- Software install hote hain
+- Files store hoti hain
+
+### Real World Analogy 🗄️
+
+Socho ek locker.
+
+Jab computer band ho jata hai tab bhi data locker me safe rehta hai.
+
+SSD bhi waise hi data save rakhta hai.
+
+---
+
+## Motherboard
+
+### Kya Hai?
+
+Motherboard computer ka main circuit board hota hai.
+
+Saare hardware isi se connected hote hain.
+
+### Connected Components
+
+- CPU
+- RAM
+- SSD
+- GPU
+- USB Ports
+- Network Adapter
+
+### Real World Analogy 🏙️
+
+Socho ek city.
+
+Motherboard us city ki roads aur infrastructure hai.
+
+Saare components isi ke through communicate karte hain.
+
+---
+
+## PSU (Power Supply Unit)
+
+### Kya Hai?
+
+PSU wall electricity ko computer ke usable voltage me convert karta hai.
+
+### Real World Analogy ⚡
+
+Power Station → Electricity
+
+PSU → Computer ko safe power supply
+
+---
+
+# 🛠️ System Information Tool
+
+# 1️⃣ msinfo32
+
+## Purpose
+
+System ki complete hardware aur software information dikhata hai.
+
+## Command
+
+```cmd
+msinfo32
+```
+
+## Information Available
+
+- Windows Version
+- System Model
+- BIOS Version
+- CPU
+- RAM
+- Motherboard
+- Drivers
+- Security Features
+
+---
+
+## Real World Analogy 📖
+
+Socho hospital ki patient file.
+
+Usme patient ki poori history likhi hoti hai.
+
+`msinfo32` computer ki waise hi complete history file hai.
+
+---
+
+## Service Desk Use
+
+User pooche:
+
+> Mera laptop model kya hai?
+
+> Mere system me kitni RAM hai?
+
+> BIOS version kya hai?
+
+Answer:
+
+```cmd
+msinfo32
+```
+
+---
+
+# 2️⃣ CPU Information
+
+## Command
+
+```cmd
+wmic cpu get name
+```
+
+## Purpose
+
+Processor ka exact model name dikhata hai.
+
+---
+
+## Breakdown
+
+| Command Part | Meaning |
+|--------------|----------|
+| wmic | Windows Management Instrumentation |
+| cpu | CPU Information |
+| get name | Processor Name Show Karo |
+
+---
+
+## Example Output
+
+```text
+Intel(R) Core(TM) i7-13650HX
+```
+
+---
+
+## Real World Analogy 🚗
+
+Car ka bonnet khole bina engine model dekhna.
+
+Waise hi:
+
+```cmd
+wmic cpu get name
+```
+
+Laptop khole bina CPU model bata deta hai.
+
+---
+
+## Service Desk Use
+
+Compatibility Check
+
+Example:
+
+- VMware
+- VirtualBox
+- Android Studio
+- Video Editing Software
+
+CPU model dekhkar hardware capability verify kar sakte hain.
+
+---
+
+# 3️⃣ RAM Information
+
+## Command
+
+```cmd
+wmic memorychip get capacity
+```
+
+## Purpose
+
+Har RAM stick ki capacity dikhata hai.
+
+---
+
+## Example Output
+
+```text
+8589934592
+8589934592
+```
+
+### Conversion
+
+```text
+8589934592 Bytes = 8 GB
+```
+
+Result:
+
+```text
+8 GB + 8 GB = 16 GB
+```
+
+---
+
+## Real World Analogy 📚
+
+Almirah me kitni shelves hain aur har shelf me kitni books aa sakti hain.
+
+Ye command har RAM module ki capacity batati hai.
+
+---
+
+## Service Desk Use
+
+RAM Upgrade Planning
+
+Example:
+
+Current:
+
+```text
+8 GB + 8 GB
+```
+
+Upgrade:
+
+```text
+16 GB + 16 GB = 32 GB
+```
+
+---
+
+# 4️⃣ Disk Information
+
+## Command
+
+```cmd
+wmic diskdrive get model,size,mediatype
+```
+
+## Purpose
+
+Storage device ki details dikhata hai.
+
+---
+
+## Information Available
+
+- Disk Model
+- Disk Size
+- Media Type
+
+---
+
+## Example Output
+
+```text
+Samsung SSD 512GB
+```
+
+---
+
+## Real World Analogy 🗄️
+
+Warehouse inventory card.
+
+Batata hai:
+
+- Kaunsi storage lagi hai
+- Kitni capacity hai
+- Kis type ki hai
+
+---
+
+## Service Desk Use
+
+User:
+
+> System slow chal raha hai.
+
+Check:
+
+```cmd
+wmic diskdrive get model,size,mediatype
+```
+
+Identify:
+
+- HDD
+- SATA SSD
+- NVMe SSD
+
+---
+
+# 5️⃣ Total Physical Memory
+
+## Command
+
+```cmd
+systeminfo | findstr /C:"Total Physical Memory"
+```
+
+---
+
+## Purpose
+
+System ki total installed RAM quickly dikhata hai.
+
+---
+
+## Breakdown
+
+### systeminfo
+
+Complete system report generate karta hai.
+
+---
+
+### Pipe ( | )
+
+Ek command ka output dusri command ko pass karta hai.
+
+```text
+systeminfo
+      ↓
+      |
+      ↓
+findstr
+```
+
+---
+
+### findstr
+
+Specific text search karta hai.
+
+```cmd
+findstr /C:"Total Physical Memory"
+```
+
+Sirf RAM wali line dikhata hai.
+
+---
+
+## Example Output
+
+```text
+Total Physical Memory: 15,874 MB
+```
+
+---
+
+## Service Desk Use
+
+Quick RAM Verification
+
+Remote troubleshooting me useful.
+
+---
+
+# 🖥️ PC Hardware Diagram
+
+```text
+                ┌──────────────┐
+                │     CPU      │
+                └──────┬───────┘
+                       │
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+        ▼              ▼              ▼
+
+    ┌───────┐     ┌────────┐     ┌────────┐
+    │ RAM   │     │ SSD    │     │ GPU    │
+    └───────┘     └────────┘     └────────┘
+
+               All Connected To
+
+           ┌─────────────────┐
+           │  Motherboard    │
+           └─────────────────┘
+
+                     ▲
+                     │
+                     │
+             ┌────────────┐
+             │    PSU     │
+             └────────────┘
+```
+
+---
+
+# 🎯 Interview Questions
+
+## Q1. CPU ka role kya hai?
+
+Computer ka brain hai jo instructions execute karta hai.
+
+---
+
+## Q2. RAM aur SSD me difference?
+
+RAM temporary memory hai.
+
+SSD permanent storage hai.
+
+---
+
+## Q3. `wmic cpu get name` kya karta hai?
+
+Processor ka exact model show karta hai.
+
+---
+
+## Q4. `wmic memorychip get capacity` kyun use karte hain?
+
+Har RAM stick ki individual capacity dekhne ke liye.
+
+---
+
+## Q5. `wmic diskdrive get model,size,mediatype` kya karta hai?
+
+Storage device ka model, size aur media type show karta hai.
+
+---
+
+## Q6. Pipe (`|`) kya karta hai?
+
+Ek command ka output dusri command ko pass karta hai.
+
+---
+
+# 🧠 Quick Revision
+
+```cmd
+msinfo32
+
+wmic cpu get name
+
+wmic memorychip get capacity
+
+wmic diskdrive get model,size,mediatype
+
+systeminfo | findstr /C:"Total Physical Memory"
+```
+
+---
+
+# 🔥 One Line Memory Tricks
+
+- CPU = Brain
+- RAM = Study Table
+- SSD = Locker
+- Motherboard = City Roads
+- PSU = Power Station
+- msinfo32 = Computer Biography
+- WMIC = Hardware Database Query Tool
+- systeminfo = Complete Audit Report
+- findstr = Search Filter
